@@ -1,0 +1,1264 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AutoClicker - Wireframes</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: #0f1117;
+    color: #e1e4e8;
+    padding: 40px 20px;
+  }
+  h1 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 10px;
+    background: linear-gradient(135deg, #6c63ff, #3fc1c9);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .subtitle {
+    text-align: center;
+    color: #8b949e;
+    margin-bottom: 50px;
+    font-size: 0.95rem;
+  }
+
+  /* Navigation */
+  .nav {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
+  }
+  .nav a {
+    color: #8b949e;
+    text-decoration: none;
+    padding: 8px 18px;
+    border: 1px solid #30363d;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    transition: all 0.2s;
+  }
+  .nav a:hover {
+    color: #fff;
+    border-color: #6c63ff;
+    background: rgba(108,99,255,0.1);
+  }
+
+  /* Section */
+  .section {
+    margin-bottom: 80px;
+  }
+  .section-title {
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+    color: #c9d1d9;
+  }
+  .section-desc {
+    color: #8b949e;
+    margin-bottom: 30px;
+    font-size: 0.9rem;
+  }
+
+  /* Phone Frame */
+  .phone-row {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+  .phone-container {
+    text-align: center;
+  }
+  .phone-label {
+    margin-top: 16px;
+    font-size: 0.85rem;
+    color: #8b949e;
+    font-weight: 500;
+  }
+  .phone {
+    width: 320px;
+    min-height: 640px;
+    background: #1c1f26;
+    border-radius: 32px;
+    border: 2px solid #30363d;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+  .phone-notch {
+    width: 120px;
+    height: 24px;
+    background: #0f1117;
+    border-radius: 0 0 16px 16px;
+    margin: 0 auto;
+  }
+
+  /* Status Bar */
+  .status-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px 20px 8px;
+    font-size: 0.7rem;
+    color: #8b949e;
+  }
+
+  /* Top App Bar */
+  .top-bar {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    background: #1c1f26;
+    border-bottom: 1px solid #30363d;
+  }
+  .top-bar .back { font-size: 1.2rem; margin-right: 12px; color: #8b949e; }
+  .top-bar .title { font-size: 1.05rem; font-weight: 600; flex: 1; }
+  .top-bar .action { color: #6c63ff; font-size: 0.85rem; font-weight: 500; }
+
+  /* Content */
+  .content {
+    flex: 1;
+    padding: 16px;
+    overflow-y: auto;
+  }
+
+  /* Cards */
+  .card {
+    background: #21262d;
+    border: 1px solid #30363d;
+    border-radius: 12px;
+    padding: 14px 16px;
+    margin-bottom: 12px;
+  }
+  .card-status {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .card-status .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #3fb950;
+    box-shadow: 0 0 8px rgba(63,185,80,0.4);
+  }
+  .card-status .dot.red {
+    background: #f85149;
+    box-shadow: 0 0 8px rgba(248,81,73,0.4);
+  }
+  .card-status .dot.yellow {
+    background: #d29922;
+    box-shadow: 0 0 8px rgba(210,153,34,0.4);
+  }
+  .card-status .label { font-weight: 600; font-size: 0.9rem; }
+  .card-status .sub { color: #8b949e; font-size: 0.75rem; margin-top: 2px; }
+
+  /* Section Header */
+  .section-header {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #6c63ff;
+    margin: 20px 0 10px;
+    font-weight: 600;
+  }
+
+  /* Permission Row */
+  .perm-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 14px;
+    background: #21262d;
+    border: 1px solid #30363d;
+    border-radius: 10px;
+    margin-bottom: 8px;
+    font-size: 0.85rem;
+  }
+  .perm-row .left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .perm-icon { font-size: 1.1rem; }
+  .perm-check {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+  }
+  .perm-check.ok { background: #238636; color: #fff; }
+  .perm-check.warn { background: #9e6a03; color: #fff; }
+  .btn-sm {
+    padding: 5px 14px;
+    border-radius: 6px;
+    border: none;
+    font-size: 0.75rem;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .btn-primary { background: #6c63ff; color: #fff; }
+  .btn-outline { background: transparent; border: 1px solid #30363d; color: #c9d1d9; }
+
+  /* Stepper */
+  .stepper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 8px;
+  }
+  .stepper-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    border: 1px solid #30363d;
+    background: #21262d;
+    color: #c9d1d9;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  .stepper-val {
+    flex: 1;
+    text-align: center;
+    padding: 8px;
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 500;
+  }
+  .stepper-label {
+    font-size: 0.8rem;
+    color: #8b949e;
+    margin-bottom: 4px;
+  }
+
+  /* Big Button */
+  .btn-big {
+    width: 100%;
+    padding: 14px;
+    border-radius: 12px;
+    border: none;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 12px;
+  }
+  .btn-start {
+    background: linear-gradient(135deg, #238636, #2ea043);
+    color: #fff;
+    box-shadow: 0 4px 20px rgba(46,160,67,0.3);
+  }
+  .btn-config {
+    background: #21262d;
+    color: #c9d1d9;
+    border: 1px solid #30363d;
+  }
+
+  /* Bottom Nav */
+  .bottom-nav {
+    display: flex;
+    border-top: 1px solid #30363d;
+    background: #1c1f26;
+  }
+  .bottom-nav .item {
+    flex: 1;
+    text-align: center;
+    padding: 10px 0 8px;
+    font-size: 0.65rem;
+    color: #8b949e;
+    cursor: pointer;
+  }
+  .bottom-nav .item.active { color: #6c63ff; }
+  .bottom-nav .item .icon { font-size: 1.2rem; display: block; margin-bottom: 2px; }
+
+  /* Segmented Button */
+  .segmented {
+    display: flex;
+    gap: 6px;
+    margin: 10px 0;
+  }
+  .seg-btn {
+    flex: 1;
+    padding: 10px 8px;
+    border-radius: 10px;
+    border: 1px solid #30363d;
+    background: #21262d;
+    color: #8b949e;
+    font-size: 0.78rem;
+    text-align: center;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s;
+  }
+  .seg-btn.active {
+    background: rgba(108,99,255,0.15);
+    border-color: #6c63ff;
+    color: #6c63ff;
+  }
+  .seg-btn .seg-icon { font-size: 1.2rem; display: block; margin-bottom: 4px; }
+
+  /* Point Row */
+  .point-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 12px;
+    background: #21262d;
+    border: 1px solid #30363d;
+    border-radius: 10px;
+    margin-bottom: 8px;
+    font-size: 0.82rem;
+  }
+  .point-num {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #6c63ff;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.75rem;
+  }
+  .point-coord { flex: 1; color: #c9d1d9; }
+  .point-del { color: #f85149; cursor: pointer; font-size: 1rem; }
+  .add-point {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 10px;
+    border: 2px dashed #30363d;
+    border-radius: 10px;
+    color: #6c63ff;
+    font-size: 0.82rem;
+    cursor: pointer;
+    margin-top: 8px;
+  }
+
+  /* Slider */
+  .slider-container {
+    margin: 8px 0;
+  }
+  .slider-track {
+    width: 100%;
+    height: 4px;
+    background: #30363d;
+    border-radius: 2px;
+    position: relative;
+  }
+  .slider-fill {
+    height: 100%;
+    background: #6c63ff;
+    border-radius: 2px;
+    width: 70%;
+  }
+  .slider-thumb {
+    width: 18px;
+    height: 18px;
+    background: #6c63ff;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: -7px;
+    left: calc(70% - 9px);
+  }
+  .slider-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.75rem;
+    color: #8b949e;
+    margin-top: 8px;
+  }
+
+  /* Radio */
+  .radio-row {
+    display: flex;
+    gap: 10px;
+    margin: 8px 0;
+  }
+  .radio-item {
+    flex: 1;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #30363d;
+    background: #21262d;
+    text-align: center;
+    font-size: 0.8rem;
+    cursor: pointer;
+    color: #8b949e;
+  }
+  .radio-item.active {
+    border-color: #6c63ff;
+    background: rgba(108,99,255,0.1);
+    color: #6c63ff;
+  }
+
+  /* Toggle */
+  .toggle-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 14px;
+    background: #21262d;
+    border: 1px solid #30363d;
+    border-radius: 10px;
+    margin-bottom: 8px;
+    font-size: 0.85rem;
+  }
+  .toggle {
+    width: 44px;
+    height: 24px;
+    background: #30363d;
+    border-radius: 12px;
+    position: relative;
+    cursor: pointer;
+  }
+  .toggle.on { background: #6c63ff; }
+  .toggle::after {
+    content: '';
+    width: 18px;
+    height: 18px;
+    background: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    transition: 0.2s;
+  }
+  .toggle.on::after { left: 23px; }
+
+  /* Floating Overlay */
+  .overlay-compact {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 14px;
+    background: rgba(28,31,38,0.95);
+    border: 1px solid #30363d;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+    font-size: 1rem;
+    backdrop-filter: blur(10px);
+  }
+  .overlay-compact .ov-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 0.85rem;
+  }
+  .ov-play { background: #238636; color: #fff; }
+  .ov-pause { background: #9e6a03; color: #fff; }
+  .ov-stop { background: #da3633; color: #fff; }
+  .ov-menu { background: #30363d; color: #c9d1d9; }
+
+  .overlay-expanded {
+    width: 240px;
+    background: rgba(28,31,38,0.97);
+    border: 1px solid #30363d;
+    border-radius: 16px;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.6);
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+  }
+  .ov-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 14px;
+    border-bottom: 1px solid #30363d;
+    font-size: 0.82rem;
+    font-weight: 600;
+  }
+  .ov-body { padding: 12px 14px; font-size: 0.78rem; }
+  .ov-stat {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 0;
+    color: #8b949e;
+  }
+  .ov-stat .val { color: #c9d1d9; font-weight: 500; }
+  .ov-controls {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    padding: 10px 14px;
+    border-top: 1px solid #30363d;
+    border-bottom: 1px solid #30363d;
+  }
+  .ov-footer { padding: 10px 14px; }
+  .ov-speed {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.75rem;
+    color: #8b949e;
+    margin-bottom: 10px;
+  }
+  .ov-speed .bar {
+    flex: 1;
+    height: 3px;
+    background: #30363d;
+    border-radius: 2px;
+    position: relative;
+  }
+  .ov-speed .dot {
+    width: 10px;
+    height: 10px;
+    background: #6c63ff;
+    border-radius: 50%;
+    position: absolute;
+    top: -3.5px;
+    left: 50%;
+  }
+  .ov-settings {
+    text-align: center;
+    padding: 8px;
+    background: #21262d;
+    border-radius: 8px;
+    color: #8b949e;
+    font-size: 0.75rem;
+    cursor: pointer;
+  }
+
+  /* Crosshair Overlay */
+  .crosshair-overlay {
+    width: 280px;
+    height: 400px;
+    background: rgba(100,100,100,0.2);
+    border: 1px solid #30363d;
+    border-radius: 16px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .crosshair {
+    position: relative;
+    width: 60px;
+    height: 60px;
+  }
+  .crosshair::before, .crosshair::after {
+    content: '';
+    position: absolute;
+    background: #6c63ff;
+  }
+  .crosshair::before {
+    width: 2px;
+    height: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .crosshair::after {
+    height: 2px;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .crosshair-ring {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border: 2px solid #6c63ff;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .crosshair-pos {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+    font-size: 0.8rem;
+    color: #c9d1d9;
+    background: rgba(28,31,38,0.9);
+    padding: 10px;
+  }
+  .crosshair-actions {
+    position: absolute;
+    bottom: 50px;
+    display: flex;
+    gap: 10px;
+  }
+  .crosshair-actions button {
+    padding: 8px 20px;
+    border-radius: 8px;
+    border: none;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  /* Macro Card */
+  .macro-card {
+    background: #21262d;
+    border: 1px solid #30363d;
+    border-radius: 12px;
+    padding: 14px;
+    margin-bottom: 10px;
+  }
+  .macro-name {
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 4px;
+  }
+  .macro-meta {
+    font-size: 0.75rem;
+    color: #8b949e;
+    margin-bottom: 10px;
+  }
+  .macro-actions {
+    display: flex;
+    gap: 6px;
+  }
+  .macro-actions .btn-sm { flex: 1; text-align: center; }
+
+  /* User Flow */
+  .flow-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 30px 0;
+  }
+  .flow-box {
+    background: #21262d;
+    border: 1px solid #30363d;
+    border-radius: 12px;
+    padding: 16px 24px;
+    text-align: center;
+    min-width: 140px;
+  }
+  .flow-box .icon { font-size: 1.5rem; margin-bottom: 6px; }
+  .flow-box .label { font-size: 0.82rem; font-weight: 600; }
+  .flow-arrow {
+    font-size: 1.5rem;
+    color: #6c63ff;
+  }
+
+  /* Responsive */
+  @media (max-width: 800px) {
+    .phone-row { flex-direction: column; align-items: center; }
+    .flow-container { flex-direction: column; }
+    .flow-arrow { transform: rotate(90deg); }
+  }
+</style>
+</head>
+<body>
+
+<h1>🖱️ AutoClicker</h1>
+<p class="subtitle">Wireframes — Android App (Kotlin + Jetpack Compose, API 29+)</p>
+
+<nav class="nav">
+  <a href="#flow">User Flow</a>
+  <a href="#home">Home</a>
+  <a href="#gesture">Gesture Config</a>
+  <a href="#picker">Point Picker</a>
+  <a href="#settings">Settings</a>
+  <a href="#overlay">Floating Overlay</a>
+  <a href="#macros">Macros</a>
+</nav>
+
+<!-- ========== USER FLOW ========== -->
+<div class="section" id="flow">
+  <h2 class="section-title">🔄 User Flow</h2>
+  <p class="section-desc">Alur utama pengguna dari launch hingga auto-clicker aktif</p>
+  <div class="flow-container">
+    <div class="flow-box">
+      <div class="icon">🚀</div>
+      <div class="label">Launch App</div>
+    </div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-box">
+      <div class="icon">🔐</div>
+      <div class="label">Check Permissions</div>
+    </div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-box">
+      <div class="icon">🏠</div>
+      <div class="label">Home Screen</div>
+    </div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-box">
+      <div class="icon">🎯</div>
+      <div class="label">Config Points</div>
+    </div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-box">
+      <div class="icon">📍</div>
+      <div class="label">Pick Coordinates</div>
+    </div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-box">
+      <div class="icon">▶️</div>
+      <div class="label">Start → Overlay</div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== HOME SCREEN ========== -->
+<div class="section" id="home">
+  <h2 class="section-title">1. Home Screen</h2>
+  <p class="section-desc">Layar utama — status, permission check, quick config, dan tombol start</p>
+  <div class="phone-row">
+    <div class="phone-container">
+      <div class="phone">
+        <div class="phone-notch"></div>
+        <div class="status-bar">
+          <span>12:00</span>
+          <span>🔋 85% 📶</span>
+        </div>
+        <div class="top-bar">
+          <span class="back">≡</span>
+          <span class="title">AutoClicker</span>
+          <span class="action">⚙️</span>
+        </div>
+        <div class="content">
+
+          <!-- Status Card -->
+          <div class="card">
+            <div class="card-status">
+              <div class="dot"></div>
+              <div>
+                <div class="label">Service: ACTIVE</div>
+                <div class="sub">Mengklik di (450, 800)</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Permissions -->
+          <div class="section-header">Permissions</div>
+
+          <div class="perm-row">
+            <div class="left">
+              <span class="perm-icon">🪟</span>
+              <span>Overlay Permission</span>
+            </div>
+            <div class="perm-check ok">✓</div>
+          </div>
+
+          <div class="perm-row">
+            <div class="left">
+              <span class="perm-icon">♿</span>
+              <span>Accessibility Service</span>
+            </div>
+            <button class="btn-sm btn-primary">Enable →</button>
+          </div>
+
+          <div class="perm-row">
+            <div class="left">
+              <span class="perm-icon">🔔</span>
+              <span>Notifications</span>
+            </div>
+            <div class="perm-check ok">✓</div>
+          </div>
+
+          <!-- Quick Config -->
+          <div class="section-header">Quick Config</div>
+
+          <div class="stepper-label">Click Interval</div>
+          <div class="stepper">
+            <div class="stepper-btn">−</div>
+            <div class="stepper-val">1000 ms</div>
+            <div class="stepper-btn">+</div>
+          </div>
+
+          <div class="stepper-label" style="margin-top:12px">Repeat Count</div>
+          <div class="stepper">
+            <div class="stepper-btn">−</div>
+            <div class="stepper-val">∞ Infinite</div>
+            <div class="stepper-btn">+</div>
+          </div>
+
+          <!-- Buttons -->
+          <button class="btn-big btn-config">📍 Select Click Points</button>
+          <button class="btn-big btn-start">▶ START AUTO-CLICKER</button>
+        </div>
+
+        <div class="bottom-nav">
+          <div class="item active"><span class="icon">🏠</span>Home</div>
+          <div class="item"><span class="icon">🎯</span>Gestures</div>
+          <div class="item"><span class="icon">⚙️</span>Settings</div>
+        </div>
+      </div>
+      <div class="phone-label">Home — Service Active</div>
+    </div>
+
+    <div class="phone-container">
+      <div class="phone">
+        <div class="phone-notch"></div>
+        <div class="status-bar">
+          <span>12:00</span>
+          <span>🔋 85% 📶</span>
+        </div>
+        <div class="top-bar">
+          <span class="back">≡</span>
+          <span class="title">AutoClicker</span>
+          <span class="action">⚙️</span>
+        </div>
+        <div class="content">
+          <div class="card">
+            <div class="card-status">
+              <div class="dot red"></div>
+              <div>
+                <div class="label">Service: INACTIVE</div>
+                <div class="sub">Tap start to begin</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="section-header">Permissions</div>
+          <div class="perm-row">
+            <div class="left"><span class="perm-icon">🪟</span><span>Overlay Permission</span></div>
+            <div class="perm-check warn">!</div>
+          </div>
+          <div class="perm-row">
+            <div class="left"><span class="perm-icon">♿</span><span>Accessibility Service</span></div>
+            <button class="btn-sm btn-primary">Enable →</button>
+          </div>
+          <div class="perm-row">
+            <div class="left"><span class="perm-icon">🔔</span><span>Notifications</span></div>
+            <div class="perm-check ok">✓</div>
+          </div>
+
+          <div class="section-header">Quick Config</div>
+          <div class="stepper-label">Click Interval</div>
+          <div class="stepper">
+            <div class="stepper-btn">−</div>
+            <div class="stepper-val">500 ms</div>
+            <div class="stepper-btn">+</div>
+          </div>
+          <div class="stepper-label" style="margin-top:12px">Repeat Count</div>
+          <div class="stepper">
+            <div class="stepper-btn">−</div>
+            <div class="stepper-val">50 times</div>
+            <div class="stepper-btn">+</div>
+          </div>
+
+          <button class="btn-big btn-config">📍 Select Click Points</button>
+          <button class="btn-big btn-start" style="background:linear-gradient(135deg,#6c63ff,#8b7dff);box-shadow:0 4px 20px rgba(108,99,255,0.3)">▶ START AUTO-CLICKER</button>
+        </div>
+        <div class="bottom-nav">
+          <div class="item active"><span class="icon">🏠</span>Home</div>
+          <div class="item"><span class="icon">🎯</span>Gestures</div>
+          <div class="item"><span class="icon">⚙️</span>Settings</div>
+        </div>
+      </div>
+      <div class="phone-label">Home — Need Permissions</div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== GESTURE CONFIG ========== -->
+<div class="section" id="gesture">
+  <h2 class="section-title">2. Gesture Configuration</h2>
+  <p class="section-desc">Konfigurasi tipe gesture, click points, dan sequence settings</p>
+  <div class="phone-row">
+    <div class="phone-container">
+      <div class="phone">
+        <div class="phone-notch"></div>
+        <div class="status-bar">
+          <span>12:00</span>
+          <span>🔋 85% 📶</span>
+        </div>
+        <div class="top-bar">
+          <span class="back">←</span>
+          <span class="title">Gesture Config</span>
+          <span class="action">💾 Save</span>
+        </div>
+        <div class="content">
+
+          <div class="section-header">Gesture Type</div>
+          <div class="segmented">
+            <div class="seg-btn active">
+              <span class="seg-icon">🖱️</span>Tap
+            </div>
+            <div class="seg-btn">
+              <span class="seg-icon">👆</span>Swipe
+            </div>
+            <div class="seg-btn">
+              <span class="seg-icon">👆</span>Long Press
+            </div>
+          </div>
+
+          <div class="section-header">Click Points</div>
+
+          <div class="point-row">
+            <div class="point-num">1</div>
+            <span class="point-coord">(450, 800)</span>
+            <span style="font-size:0.7rem;color:#8b949e">Tap · 100ms</span>
+            <span class="point-del">✕</span>
+          </div>
+          <div class="point-row">
+            <div class="point-num">2</div>
+            <span class="point-coord">(200, 500)</span>
+            <span style="font-size:0.7rem;color:#8b949e">Tap · 100ms</span>
+            <span class="point-del">✕</span>
+          </div>
+          <div class="point-row">
+            <div class="point-num">3</div>
+            <span class="point-coord">(700, 300)</span>
+            <span style="font-size:0.7rem;color:#8b949e">Swipe→</span>
+            <span class="point-del">✕</span>
+          </div>
+          <div class="add-point">+ Add New Point</div>
+
+          <div class="section-header">Sequence Settings</div>
+          <div style="font-size:0.8rem;color:#8b949e;margin-bottom:8px">Loop Mode</div>
+          <div class="radio-row">
+            <div class="radio-item">Once</div>
+            <div class="radio-item active">∞ Infinite</div>
+            <div class="radio-item">Custom N</div>
+          </div>
+
+          <div class="stepper-label" style="margin-top:12px">Delay Between Points</div>
+          <div class="stepper">
+            <div class="stepper-btn">−</div>
+            <div class="stepper-val">500 ms</div>
+            <div class="stepper-btn">+</div>
+          </div>
+
+          <button class="btn-big btn-start" style="margin-top:16px;background:linear-gradient(135deg,#6c63ff,#8b7dff)">▶ TEST SEQUENCE</button>
+        </div>
+      </div>
+      <div class="phone-label">Gesture Config — Tap Mode</div>
+    </div>
+
+    <div class="phone-container">
+      <div class="phone">
+        <div class="phone-notch"></div>
+        <div class="status-bar">
+          <span>12:00</span>
+          <span>🔋 85% 📶</span>
+        </div>
+        <div class="top-bar">
+          <span class="back">←</span>
+          <span class="title">Gesture Config</span>
+          <span class="action">💾 Save</span>
+        </div>
+        <div class="content">
+
+          <div class="section-header">Gesture Type</div>
+          <div class="segmented">
+            <div class="seg-btn">
+              <span class="seg-icon">🖱️</span>Tap
+            </div>
+            <div class="seg-btn active">
+              <span class="seg-icon">👆</span>Swipe
+            </div>
+            <div class="seg-btn">
+              <span class="seg-icon">👆</span>Long Press
+            </div>
+          </div>
+
+          <div class="section-header">Swipe Path</div>
+
+          <div class="point-row">
+            <div class="point-num">1</div>
+            <span class="point-coord">Start (100, 400)</span>
+            <span class="point-del">✕</span>
+          </div>
+          <div style="text-align:center;color:#6c63ff;font-size:1.2rem;padding:4px 0">↓</div>
+          <div class="point-row">
+            <div class="point-num">2</div>
+            <span class="point-coord">End (100, 1200)</span>
+            <span class="point-del">✕</span>
+          </div>
+
+          <div class="stepper-label" style="margin-top:12px">Swipe Duration</div>
+          <div class="stepper">
+            <div class="stepper-btn">−</div>
+            <div class="stepper-val">300 ms</div>
+            <div class="stepper-btn">+</div>
+          </div>
+
+          <div class="section-header">Sequence Settings</div>
+          <div style="font-size:0.8rem;color:#8b949e;margin-bottom:8px">Loop Mode</div>
+          <div class="radio-row">
+            <div class="radio-item">Once</div>
+            <div class="radio-item active">∞ Infinite</div>
+            <div class="radio-item">Custom N</div>
+          </div>
+
+          <div class="stepper-label" style="margin-top:12px">Delay Between Swipes</div>
+          <div class="stepper">
+            <div class="stepper-btn">−</div>
+            <div class="stepper-val">1000 ms</div>
+            <div class="stepper-btn">+</div>
+          </div>
+
+          <button class="btn-big btn-start" style="margin-top:16px;background:linear-gradient(135deg,#6c63ff,#8b7dff)">▶ TEST SEQUENCE</button>
+        </div>
+      </div>
+      <div class="phone-label">Gesture Config — Swipe Mode</div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== POINT PICKER ========== -->
+<div class="section" id="picker">
+  <h2 class="section-title">3. Point Picker Overlay</h2>
+  <p class="section-desc">Overlay crosshair untuk memilih koordinat di layar</p>
+  <div class="phone-row">
+    <div class="phone-container">
+      <div class="crosshair-overlay">
+        <div style="position:absolute;top:30%;left:60%;width:8px;height:8px;background:#f85149;border-radius:50%;box-shadow:0 0 10px rgba(248,81,73,0.5)"></div>
+        <div style="position:absolute;top:50%;left:30%;width:8px;height:8px;background:#3fb950;border-radius:50%;box-shadow:0 0 10px rgba(63,185,80,0.5)"></div>
+        <div style="position:absolute;top:70%;left:75%;width:8px;height:8px;background:#d29922;border-radius:50%;box-shadow:0 0 10px rgba(210,153,34,0.5)"></div>
+        <div class="crosshair">
+          <div class="crosshair-ring"></div>
+        </div>
+        <div class="crosshair-actions">
+          <button class="btn-sm btn-primary">✓ Confirm</button>
+          <button class="btn-sm btn-outline">Cancel</button>
+        </div>
+        <div class="crosshair-pos">📍 Position: (450, 800)</div>
+      </div>
+      <div class="phone-label">Point Picker — Tap to select</div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== SETTINGS ========== -->
+<div class="section" id="settings">
+  <h2 class="section-title">4. Settings</h2>
+  <p class="section-desc">Pengaturan umum aplikasi, overlay, dan preferensi</p>
+  <div class="phone-row">
+    <div class="phone-container">
+      <div class="phone">
+        <div class="phone-notch"></div>
+        <div class="status-bar">
+          <span>12:00</span>
+          <span>🔋 85% 📶</span>
+        </div>
+        <div class="top-bar">
+          <span class="back">←</span>
+          <span class="title">Settings</span>
+          <span class="action"></span>
+        </div>
+        <div class="content">
+
+          <div class="section-header">General</div>
+          <div class="stepper-label">Default Click Interval</div>
+          <div class="stepper">
+            <div class="stepper-btn">−</div>
+            <div class="stepper-val">1000 ms</div>
+            <div class="stepper-btn">+</div>
+          </div>
+          <div class="stepper-label" style="margin-top:12px">Default Click Duration</div>
+          <div class="stepper">
+            <div class="stepper-btn">−</div>
+            <div class="stepper-val">100 ms</div>
+            <div class="stepper-btn">+</div>
+          </div>
+
+          <div class="section-header">Overlay</div>
+          <div style="font-size:0.8rem;color:#8b949e;margin-bottom:8px">Overlay Size</div>
+          <div class="radio-row">
+            <div class="radio-item">Small</div>
+            <div class="radio-item active">Medium</div>
+            <div class="radio-item">Large</div>
+          </div>
+
+          <div style="font-size:0.8rem;color:#8b949e;margin:12px 0 4px">Opacity</div>
+          <div class="slider-container">
+            <div class="slider-track">
+              <div class="slider-fill"></div>
+              <div class="slider-thumb"></div>
+            </div>
+            <div class="slider-label"><span>0%</span><span style="color:#c9d1d9">80%</span><span>100%</span></div>
+          </div>
+
+          <div class="section-header">Appearance</div>
+          <div class="radio-row">
+            <div class="radio-item">☀️ Light</div>
+            <div class="radio-item">🌙 Dark</div>
+            <div class="radio-item active">💻 System</div>
+          </div>
+
+          <div class="section-header">Advanced</div>
+          <div class="toggle-row">
+            <span>🔋 Ignore Battery Optimization</span>
+            <div class="toggle on"></div>
+          </div>
+          <div class="toggle-row">
+            <span>🔔 Show Notification</span>
+            <div class="toggle on"></div>
+          </div>
+          <div class="toggle-row">
+            <span>📳 Vibrate on Tap</span>
+            <div class="toggle"></div>
+          </div>
+
+          <div class="section-header">About</div>
+          <div style="font-size:0.8rem;color:#8b949e;margin-bottom:8px">Version 1.0.0</div>
+          <button class="btn-sm btn-outline" style="width:100%;padding:10px;border-radius:10px">Reset All Settings</button>
+        </div>
+        <div class="bottom-nav">
+          <div class="item"><span class="icon">🏠</span>Home</div>
+          <div class="item"><span class="icon">🎯</span>Gestures</div>
+          <div class="item active"><span class="icon">⚙️</span>Settings</div>
+        </div>
+      </div>
+      <div class="phone-label">Settings Screen</div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== FLOATING OVERLAY ========== -->
+<div class="section" id="overlay">
+  <h2 class="section-title">5. Floating Overlay</h2>
+  <p class="section-desc">Control panel yang melayang di atas semua aplikasi</p>
+  <div class="phone-row">
+
+    <div class="phone-container">
+      <div style="width:280px;height:200px;background:rgba(100,100,120,0.15);border:1px dashed #30363d;border-radius:16px;display:flex;align-items:center;justify-content:center;position:relative">
+        <span style="color:#8b949e;font-size:0.75rem">App lain di bawah...</span>
+        <div style="position:absolute;top:40px;right:20px">
+          <div class="overlay-compact">
+            <div class="ov-btn ov-play">▶</div>
+            <div class="ov-btn ov-pause">⏸</div>
+            <div class="ov-btn ov-stop">⏹</div>
+            <div class="ov-btn ov-menu">≡</div>
+          </div>
+        </div>
+      </div>
+      <div class="phone-label">Compact Mode (Default)</div>
+    </div>
+
+    <div class="phone-container">
+      <div style="width:280px;height:320px;background:rgba(100,100,120,0.15);border:1px dashed #30363d;border-radius:16px;display:flex;align-items:center;justify-content:center;position:relative">
+        <span style="color:#8b949e;font-size:0.75rem">App lain di bawah...</span>
+        <div style="position:absolute;top:30px;right:15px">
+          <div class="overlay-expanded">
+            <div class="ov-header">
+              <span>🖱️ AutoClicker</span>
+              <span style="cursor:pointer">✕</span>
+            </div>
+            <div class="ov-body">
+              <div class="ov-stat"><span>● Status</span><span class="val" style="color:#3fb950">Running</span></div>
+              <div class="ov-stat"><span>📍 Point</span><span class="val">(450, 800)</span></div>
+              <div class="ov-stat"><span>⏱ Interval</span><span class="val">1000ms</span></div>
+              <div class="ov-stat"><span>🔢 Count</span><span class="val">42 / ∞</span></div>
+            </div>
+            <div class="ov-controls">
+              <div class="ov-btn ov-play">▶</div>
+              <div class="ov-btn ov-pause">⏸</div>
+              <div class="ov-btn ov-stop">⏹</div>
+            </div>
+            <div class="ov-footer">
+              <div class="ov-speed">
+                <span>Speed</span>
+                <div class="bar"><div class="dot"></div></div>
+                <span>1x</span>
+              </div>
+              <div class="ov-settings">⚙️ Open Settings</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="phone-label">Expanded Mode</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ========== MACROS ========== -->
+<div class="section" id="macros">
+  <h2 class="section-title">6. Macro List</h2>
+  <p class="section-desc">Daftar macro tersimpan dengan opsi run, edit, delete</p>
+  <div class="phone-row">
+    <div class="phone-container">
+      <div class="phone">
+        <div class="phone-notch"></div>
+        <div class="status-bar">
+          <span>12:00</span>
+          <span>🔋 85% 📶</span>
+        </div>
+        <div class="top-bar">
+          <span class="back">←</span>
+          <span class="title">My Macros</span>
+          <span class="action">+ New</span>
+        </div>
+        <div class="content">
+
+          <div class="macro-card">
+            <div class="macro-name">📁 Auto Scroll</div>
+            <div class="macro-meta">3 points · 500ms gap · Last used: 2h ago</div>
+            <div class="macro-actions">
+              <button class="btn-sm btn-primary">▶ Run</button>
+              <button class="btn-sm btn-outline">✏️ Edit</button>
+              <button class="btn-sm btn-outline" style="color:#f85149;border-color:#f85149">🗑️</button>
+            </div>
+          </div>
+
+          <div class="macro-card">
+            <div class="macro-name">📁 Auto Like</div>
+            <div class="macro-meta">1 point · 200ms gap · Last used: Yesterday</div>
+            <div class="macro-actions">
+              <button class="btn-sm btn-primary">▶ Run</button>
+              <button class="btn-sm btn-outline">✏️ Edit</button>
+              <button class="btn-sm btn-outline" style="color:#f85149;border-color:#f85149">🗑️</button>
+            </div>
+          </div>
+
+          <div class="macro-card">
+            <div class="macro-name">📁 Game Combo</div>
+            <div class="macro-meta">5 points · 100ms gap · Last used: 3d ago</div>
+            <div class="macro-actions">
+              <button class="btn-sm btn-primary">▶ Run</button>
+              <button class="btn-sm btn-outline">✏️ Edit</button>
+              <button class="btn-sm btn-outline" style="color:#f85149;border-color:#f85149">🗑️</button>
+            </div>
+          </div>
+
+          <div class="macro-card" style="border-style:dashed;text-align:center;color:#6c63ff;cursor:pointer">
+            <div style="font-size:0.85rem">📥 Import from File</div>
+          </div>
+
+        </div>
+        <div class="bottom-nav">
+          <div class="item"><span class="icon">🏠</span>Home</div>
+          <div class="item active"><span class="icon">🎯</span>Gestures</div>
+          <div class="item"><span class="icon">⚙️</span>Settings</div>
+        </div>
+      </div>
+      <div class="phone-label">Macro List Screen</div>
+    </div>
+  </div>
+</div>
+
+<div style="text-align:center;padding:40px 0;color:#8b949e;font-size:0.85rem">
+  <p>AutoClicker Wireframes v1.0 — Kotlin + Jetpack Compose · API 29+</p>
+  <p style="margin-top:6px">Package: <code style="background:#21262d;padding:2px 8px;border-radius:4px">com.imut.autoclicker</code></p>
+</div>
+
+</body>
+</html>

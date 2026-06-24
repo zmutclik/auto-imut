@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">AutoClicker</string>
+
+    <!-- Accessibility Service -->
+    <string name="accessibility_service_label">AutoClicker Service</string>
+    <string name="accessibility_service_description">AutoClicker uses this service to perform automatic taps, swipes, and gestures on your screen. This is required for the auto-click functionality to work.</string>
+    <string name="accessibility_service_tool_description">Automated click and gesture service</string>
+
+    <!-- Permissions -->
+    <string name="overlay_permission_title">Overlay Permission Required</string>
+    <string name="overlay_permission_desc">AutoClicker needs permission to display a floating control panel over other apps.</string>
+    <string name="accessibility_permission_title">Accessibility Service Required</string>
+    <string name="accessibility_permission_desc">Please enable AutoClicker in Accessibility Settings to allow automated clicking.</string>
+    <string name="notification_permission_title">Notification Permission</string>
+    <string name="notification_permission_desc">AutoClicker needs notification permission to show service status.</string>
+
+    <!-- Notification -->
+    <string name="notification_channel_name">AutoClicker Service</string>
+    <string name="notification_channel_desc">Shows when AutoClicker is running</string>
+    <string name="notification_title">AutoClicker Active</string>
+    <string name="notification_text">Tap to open settings</string>
+    <string name="notification_stop">Stop</string>
+
+    <!-- Home Screen -->
+    <string name="service_active">Service: ACTIVE</string>
+    <string name="service_inactive">Service: INACTIVE</string>
+    <string name="tap_start_to_begin">Tap start to begin</string>
+    <string name="permissions_section">Permissions</string>
+    <string name="overlay_permission">Overlay Permission</string>
+    <string name="accessibility_service">Accessibility Service</string>
+    <string name="notifications">Notifications</string>
+    <string name="enable">Enable</string>
+    <string name="granted">Granted</string>
+    <string name="quick_config">Quick Config</string>
+    <string name="click_interval">Click Interval</string>
+    <string name="repeat_count">Repeat Count</string>
+    <string name="infinite">Infinite</string>
+    <string name="select_click_points">Select Click Points</string>
+    <string name="start_auto_clicker">START AUTO-CLICKER</string>
+    <string name="stop_auto_clicker">STOP AUTO-CLICKER</string>
+
+    <!-- Gesture Config -->
+    <string name="gesture_config">Gesture Config</string>
+    <string name="gesture_type">Gesture Type</string>
+    <string name="tap">Tap</string>
+    <string name="swipe">Swipe</string>
+    <string name="long_press">Long Press</string>
+    <string name="click_points">Click Points</string>
+    <string name="add_new_point">+ Add New Point</string>
+    <string name="sequence_settings">Sequence Settings</string>
+    <string name="loop_mode">Loop Mode</string>
+    <string name="once">Once</string>
+    <string name="custom_n">Custom</string>
+    <string name="delay_between_points">Delay Between Points</string>
+    <string name="test_sequence">TEST SEQUENCE</string>
+    <string name="save">Save</string>
+    <string name="swipe_path">Swipe Path</string>
+    <string name="start_point">Start</string>
+    <string name="end_point">End</string>
+    <string name="swipe_duration">Swipe Duration</string>
+
+    <!-- Settings -->
+    <string name="settings">Settings</string>
+    <string name="general">General</string>
+    <string name="default_click_interval">Default Click Interval</string>
+    <string name="default_click_duration">Default Click Duration</string>
+    <string name="overlay_section">Overlay</string>
+    <string name="overlay_size">Overlay Size</string>
+    <string name="small">Small</string>
+    <string name="medium">Medium</string>
+    <string name="large">Large</string>
+    <string name="opacity">Opacity</string>
+    <string name="appearance">Appearance</string>
+    <string name="light">Light</string>
+    <string name="dark">Dark</string>
+    <string name="system_theme">System</string>
+    <string name="advanced">Advanced</string>
+    <string name="ignore_battery_opt">Ignore Battery Optimization</string>
+    <string name="show_notification">Show Notification</string>
+    <string name="vibrate_on_tap">Vibrate on Tap</string>
+    <string name="about">About</string>
+    <string name="reset_all_settings">Reset All Settings</string>
+
+    <!-- Macros -->
+    <string name="my_macros">My Macros</string>
+    <string name="new_macro">New</string>
+    <string name="run">Run</string>
+    <string name="edit">Edit</string>
+    <string name="delete">Delete</string>
+    <string name="import_macro">Import from File</string>
+    <string name="points_count">%d points</string>
+    <string name="gap_format">%dms gap</string>
+    <string name="last_used">Last used: %s</string>
+    <string name="no_macros">No macros saved yet</string>
+
+    <!-- Overlay -->
+    <string name="autoclicker">AutoClicker</string>
+    <string name="status">Status</string>
+    <string name="running">Running</string>
+    <string name="paused">Paused</string>
+    <string name="stopped">Stopped</string>
+    <string name="speed">Speed</string>
+    <string name="open_settings">Open Settings</string>
+
+    <!-- Point Picker -->
+    <string name="position_format">Position: (%1$d, %2$d)</string>
+    <string name="confirm">Confirm</string>
+    <string name="cancel">Cancel</string>
+</resources>
